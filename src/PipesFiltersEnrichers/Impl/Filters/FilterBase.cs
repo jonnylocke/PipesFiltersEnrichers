@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PipesFiltersEnrichers.Filters.Interfaces;
+using PipesFiltersEnrichers.Interfaces;
 
-namespace PipesFiltersEnrichers.Filters
+namespace PipesFiltersEnrichers.Impl.Filters
 {
-    public abstract class FilterBase<T> : IFilter<T>
+    internal abstract class FilterBase<T> : IFilter<T>
     {
         private IFilter<T> _next;
-        private int InboundNumberOfKeys { get; set; }
+        private int InboundCount { get; set; }
 
-        protected abstract T Process(T value);
-        protected abstract bool IsApplicable(SearchResult value);
+        protected abstract bool IsApplicable(MyResultObj input);
+        protected abstract T Process(T input);
+        
         public DateTime ProcessStartTime { get; set; }
         
 
-        public T Apply(T value)
+        public T Apply(T input)
         {
-            var val = Process(value);
+            var val = Process(input);
             if (_next != null)
                 val = _next.Apply(val);
             return val;
@@ -31,43 +32,21 @@ namespace PipesFiltersEnrichers.Filters
                 _next.Register(filter);
         }
 
-        public void SetInboundKeysTotal(SearchResult searchResult)
+        public void SetInboundTotal(MyResultObj resultObj)
         {
-            InboundNumberOfKeys = searchResult.Output?.Count() ?? searchResult.Data.Count();
+            InboundCount = resultObj.OutboundData?.Count() ?? resultObj.InboundData.Count();
         }
 
-        public void StopProcessTime(SearchResult searchResult, string filterName)
+        public void StopProcessTime(MyResultObj resultObj, string filterName)
         {
-            var metaData = new FilterMetaData
+            var metaData = new PipelineMetadata
             {
                 Filter = filterName,
                 FilterDeltaTime = DateTime.Now.Subtract(ProcessStartTime),
-                InboundNumberOfKeys = InboundNumberOfKeys,
-                OutboundNumberOfKeys = searchResult.Output?.Count() ?? searchResult.Data.Count()
+                InboundDataCount = InboundCount,
+                OutboundDataCount = resultObj.OutboundData?.Count() ?? resultObj.InboundData.Count()
             };
-            searchResult.FilterMetaData.Add(metaData);
-        }
-
-        protected void RemoveKeysFromOutput(SearchResult value, List<ResourceComposite> resources)
-        {
-            if(!resources.Any()) return;
-
-            var temp = value.Output.ToList();
-
-            foreach (var resource in resources)
-                temp.Remove(resource);
-
-            value.Output = temp.AsEnumerable();
-        }
-
-        protected void RemoveKeysFromData(SearchResult value, List<ResourceComposite> resources)
-        {
-            var temp = value.Data.ToList();
-
-            foreach (var resource in resources)
-                temp.Remove(resource);
-
-            value.Data = temp.AsEnumerable();
+            resultObj.PipelineMetadata.Add(metaData);
         }
     }
 }

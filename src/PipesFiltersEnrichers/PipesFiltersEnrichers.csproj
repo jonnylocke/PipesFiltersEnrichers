@@ -40,15 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Factories\SearchServiceFactory.cs" />
-    <Compile Include="Impl\Enrichers\PopulatedContent.cs" />
-    <Compile Include="Impl\Filters\ContextFilter.cs" />
+    <Compile Include="Example.cs" />
+    <Compile Include="Impl\Dal.cs" />
+    <Compile Include="Impl\Enrichers\InitialiseData.cs" />
+    <Compile Include="Impl\Enrichers\NationalInsuranceEnricher.cs" />
+    <Compile Include="Impl\Filters\DobFilter.cs" />
     <Compile Include="Impl\Filters\FilterBase.cs" />
     <Compile Include="Impl\Pipes\Pipeline.cs" />
+    <Compile Include="Interfaces\IDal.cs" />
     <Compile Include="Interfaces\IFilter.cs" />
     <Compile Include="Interfaces\IFilterChain.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="MyResultObj.cs" />
+    <Compile Include="PipelineMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Factories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

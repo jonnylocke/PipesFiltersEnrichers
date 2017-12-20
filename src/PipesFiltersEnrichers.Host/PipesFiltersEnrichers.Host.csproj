@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PipesFiltersEnrichers\PipesFiltersEnrichers.csproj">
+      <Project>{ba20f575-0a33-46fc-a0a1-318e5ee4e941}</Project>
+      <Name>PipesFiltersEnrichers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

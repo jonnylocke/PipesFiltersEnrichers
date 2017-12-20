@@ -1,6 +1,6 @@
 ﻿using PipesFiltersEnrichers.Interfaces;
 
-namespace PipesFiltersEnrichers.Filters.Pipes
+namespace PipesFiltersEnrichers.Impl.Pipes
 {
     public class Pipeline<T> : IFilterChain<T>
     {

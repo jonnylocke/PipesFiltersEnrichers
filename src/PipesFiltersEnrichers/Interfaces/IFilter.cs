@@ -6,8 +6,8 @@ namespace PipesFiltersEnrichers.Interfaces
     {
         T Apply(T input);
         void Register(IFilter<T> filter);
-        DateTime ProcessStartTime { get; set; }
-        void SetInboundKeysTotal(SearchResult searchResult);
-        void StopProcessTime(SearchResult searchResult, string filterName);
+    //    DateTime ProcessStartTime { get; set; }
+    //    void SetInboundKeysTotal(SearchResult searchResult);
+    //    void StopProcessTime(SearchResult searchResult, string filterName);
     }
 }

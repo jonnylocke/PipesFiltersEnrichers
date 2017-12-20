@@ -1,0 +1,8 @@
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\bin\Debug\PipesFiltersEnrichers.Host.exe.config
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\bin\Debug\PipesFiltersEnrichers.Host.exe
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\bin\Debug\PipesFiltersEnrichers.Host.pdb
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\obj\Debug\PipesFiltersEnrichers.Host.csprojResolveAssemblyReference.cache
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\obj\Debug\PipesFiltersEnrichers.Host.exe
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\obj\Debug\PipesFiltersEnrichers.Host.pdb
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\bin\Debug\PipesFiltersEnrichers.dll
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers.Host\bin\Debug\PipesFiltersEnrichers.pdb

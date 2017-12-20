@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PipesFiltersEnrichers.Impl;
 
-namespace PipesFiltersEnrichers
+namespace PipesFiltersEnrichers.Host
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var example = new Example(new Dal());
+            example.Run();
         }
     }
 }
