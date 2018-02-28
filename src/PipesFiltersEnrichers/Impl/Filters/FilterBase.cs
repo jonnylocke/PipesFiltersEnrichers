@@ -34,7 +34,7 @@ namespace PipesFiltersEnrichers.Impl.Filters
 
         public void SetInboundTotal(MyResultObj resultObj)
         {
-            InboundCount = resultObj.OutboundData?.Count() ?? resultObj.InboundData.Count();
+            InboundCount = resultObj.OutboundData?.Count() ?? resultObj.InboundData?.Count() ?? 0;
         }
 
         public void StopProcessTime(MyResultObj resultObj, string filterName)

@@ -4,6 +4,7 @@ using PipesFiltersEnrichers.Impl.Filters;
 using PipesFiltersEnrichers.Impl.Pipes;
 using PipesFiltersEnrichers.Interfaces;
 using PipesFiltersEnrichers.Models;
+using System;
 
 namespace PipesFiltersEnrichers
 {
@@ -19,7 +20,20 @@ namespace PipesFiltersEnrichers
         public void Run()
         {
             var data = _dal.GetRawData();
-            BuildChain(data).Apply(new MyResultObj());
+            var result = new MyResultObj();
+            BuildChain(data).Apply(result);
+
+            foreach (var item in result.OutboundData)
+            {
+                Console.WriteLine(item.Forename);
+                Console.WriteLine(item.Surname);
+                Console.WriteLine(item.DateOfBirth);
+                Console.WriteLine(item.NhsId);
+                Console.WriteLine(item.BloodType);
+                Console.WriteLine(item.BirthPlace);
+                Console.WriteLine(item.NationalInsuranceNumber);
+                Console.ReadLine();
+            }
         }
 
         private IFilterChain<MyResultObj> BuildChain(IEnumerable<Patient> data)
@@ -31,7 +45,6 @@ namespace PipesFiltersEnrichers
                 .Register(new NationalInsuranceEnricher(_dal));
 
             return pipeline;
-
         }
     }
 }

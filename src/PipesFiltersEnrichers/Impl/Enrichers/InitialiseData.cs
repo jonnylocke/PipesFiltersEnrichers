@@ -21,11 +21,13 @@ namespace PipesFiltersEnrichers.Impl.Enrichers
 
         protected override MyResultObj Process(MyResultObj input)
         {
-            if (!IsApplicable(input)) return input;
+            if (!IsApplicable(input))
+                return input;
 
-            base.SetInboundTotal(input);
             base.ProcessStartTime = DateTime.Now;
             input.InboundData = _data;
+            input.OutboundData = _data;
+            base.SetInboundTotal(input);
             base.StopProcessTime(input, "InitialiseData");
 
             return input;

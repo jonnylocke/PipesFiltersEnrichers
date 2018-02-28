@@ -48,6 +48,7 @@
     <Compile Include="Impl\Filters\FilterBase.cs" />
     <Compile Include="Impl\Pipes\Pipeline.cs" />
     <Compile Include="Interfaces\IDal.cs" />
+    <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="Interfaces\IFilter.cs" />
     <Compile Include="Interfaces\IFilterChain.cs" />
     <Compile Include="Models\Patient.cs" />

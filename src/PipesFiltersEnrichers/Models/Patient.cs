@@ -13,6 +13,14 @@ namespace PipesFiltersEnrichers.Models
         public string BirthPlace { get; set; }
     }
 
+    public class IndentificationReference
+    {
+        public string ForeName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string NiNumber { get; set; }
+    }
+
     public enum BloodType
     {
         ONegative,

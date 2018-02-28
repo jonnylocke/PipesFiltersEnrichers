@@ -15,7 +15,7 @@ namespace PipesFiltersEnrichers.Impl.Enrichers
 
         protected override bool IsApplicable(MyResultObj input)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         protected override MyResultObj Process(MyResultObj input)

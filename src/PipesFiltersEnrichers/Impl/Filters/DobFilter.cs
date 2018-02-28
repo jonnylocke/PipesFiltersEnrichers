@@ -7,20 +7,24 @@ namespace PipesFiltersEnrichers.Impl.Filters
 {
     internal class DobFilter : FilterBase<MyResultObj>
     {
+
+        private int YearFilter = 1950;
+
         protected override bool IsApplicable(MyResultObj input)
         {
-            return input.InboundData.Any(x => x.DateOfBirth.Year >= 2000);
+            return input.InboundData.Any(x => x.DateOfBirth.Year >= YearFilter);
         }
 
         protected override MyResultObj Process(MyResultObj input)
         {
-            if (!IsApplicable(input)) return input;
+            if (!IsApplicable(input))
+                return input;
 
-            base.SetInboundTotal(input);
             base.ProcessStartTime = DateTime.Now;
+            base.SetInboundTotal(input);
 
-            List<Patient> newOutput = null;
-            newOutput.AddRange(input.InboundData.Where(patient => patient.DateOfBirth.Year >= 2000));
+            List<Patient> newOutput = new List<Patient>();
+            newOutput.AddRange(input.OutboundData.Where(x => x.DateOfBirth.Year >= YearFilter));
 
             input.OutboundData = newOutput;
             base.StopProcessTime(input, "DobFilter");

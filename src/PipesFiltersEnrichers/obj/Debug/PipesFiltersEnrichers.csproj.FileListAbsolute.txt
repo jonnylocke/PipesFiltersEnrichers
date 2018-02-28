@@ -2,3 +2,4 @@ C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrich
 C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers\bin\Debug\PipesFiltersEnrichers.pdb
 C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers\obj\Debug\PipesFiltersEnrichers.dll
 C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers\obj\Debug\PipesFiltersEnrichers.pdb
+C:\Users\jonat\OneDrive\Documents\Visual Studio 2017\Projects\PipesFiltersEnrichers\src\PipesFiltersEnrichers\obj\Debug\PipesFiltersEnrichers.csprojResolveAssemblyReference.cache
