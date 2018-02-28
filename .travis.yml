@@ -1,2 +1,2 @@
 language: csharp
-solution: PipesFiltersEnrichers.sln
+solution: src/PipesFiltersEnrichers.sln
